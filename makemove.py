@@ -1,13 +1,13 @@
 import requests
-
+from decode import *
 url = "http://localhost:9081/upload"
-
+key = decode()
 payload = {}
 files=[
   ('file',('test1.png',open('/Users/akash/Source/chessAI/chessboard/Testing/game 1/test1.png','rb'),'image/png'))
 ]
 headers = {
-  'authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjdSTGY0MGY2dUVMX1FtVnJ1X3J5bCJ9.eyJpc3MiOiJodHRwczovL2Rldi13Z2VhdDJmcGtyZTNndGo0LnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJVM3RHSjZDQUNGeTR5MUZFRTN3c0hkeGJiMHE1M3RYaEBjbGllbnRzIiwiYXVkIjoiaHR0cHM6Ly9jaGVzc2FpLmFrYXNoa2FsbHVta2FsLmNvbSIsImlhdCI6MTcwODM5NzcxMiwiZXhwIjoxNzA4NDg0MTEyLCJhenAiOiJVM3RHSjZDQUNGeTR5MUZFRTN3c0hkeGJiMHE1M3RYaCIsImd0eSI6ImNsaWVudC1jcmVkZW50aWFscyJ9.HqgzayTJO78ppK9KRRDcjICAfZcmUYRBtQyeGo9zpta1TY3chx2I9dtIFzSj2ELmYhkuf8topuMxUKib9UPnqE4587TJ7nq23_-AwUtDLv6ANDAEJ3cdtH3Bogk2_6Ku1ZH5H9ktGLEZbI1PONZOs0faRYY8Img0kH8y6rDcgAD8lFDKdeOywoCNV3CrSEj9rhZA2GtvnNVb9eayXCa8Jxr4zAYULGfmeR5EHggbTX7SnCkbtwaZPt5QioNZU4OJlYjCRJJraOuY3dqW04J0m0PLBAQLAen3zYkfrsUJhAfKtkwEWPwK6qua8msHcijGoGvP0mbE3h1gP-JGmYiK-g'
+  'authorization': 'Bearer ' + key
 }
 
 response = requests.request("POST", url, headers=headers, data=payload, files=files)

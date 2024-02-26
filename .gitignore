@@ -1,1 +1,3 @@
 .env
+encryption_key.key
+oauth_token.pickle
