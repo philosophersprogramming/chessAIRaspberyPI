@@ -1,11 +1,11 @@
 import requests
 from decode import *
+from webcam import *
 url = "http://localhost:9081/upload"
 key = decode()
 payload = {}
-files=[
-  ('file',('test1.png',open('/Users/akash/Source/chessAI/chessboard/Testing/game 1/test1.png','rb'),'image/png'))
-]
+photo_stream = capture_as_stream()
+files= {'file': ('photo.jpg', photo_stream, 'image/jpeg')}
 headers = {
   'authorization': 'Bearer ' + key
 }
